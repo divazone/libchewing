@@ -65,10 +65,10 @@ string chewing_io( string line, string select_str){
 				if( select <0 || select > chewing_cand_TotalChoice(ctx)){
 					return "[Error] select number error.";
 				}
-				for( int i = 0; i < select / 9; i++){
+				for( int i = 0; i < (select-1) / 9; i++){
 					chewing_handle_Space(ctx);
 				}
-				chewing_handle_Default(ctx, (char)( select%9 + 48));
+				chewing_handle_Default(ctx, (char)( (select-1)%9 + 49));
 				chewing_handle_Enter(ctx);
 				result = result + chewing_commit_String(ctx);
 				break;
@@ -90,7 +90,7 @@ int main(){
 	string line;
 	cout << ">";
 	while( getline(cin, line) ){
-		cout << "[ChewingIO] " << chewing_io( line, "1\n1\n1\n1\n1\n1\n") << endl;
+		cout << "[ChewingIO] " << chewing_io( line, "9\n9\n1\n1\n1\n1\n") << endl;
 		cout << ">";
 	}
 	cout << "Finish" << endl;

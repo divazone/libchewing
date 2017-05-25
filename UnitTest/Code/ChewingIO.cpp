@@ -84,7 +84,7 @@ string chewing_io( string line, string select_str){
 	chewing_delete(ctx);
 	return result;
 }
-
+/*
 int main(){
 	cout << "[ChewingIO] <E>: enter, <L>: left, <R>: right, <U>: up, <D>: down, <B>: backspace" << endl;
 	string line;
@@ -96,3 +96,4 @@ int main(){
 	cout << "Finish" << endl;
 	return 0;
 }
+*/
